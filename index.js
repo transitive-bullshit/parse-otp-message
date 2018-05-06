@@ -31,7 +31,7 @@ module.exports = (message) => {
   }
 }
 
-function validateAuthCode (message, pattern, isGlobal = false) {
+function validateAuthCode (message, pattern, isGlobal) {
   const match = message.match(pattern)
 
   if (match) {
