@@ -1,0 +1,44 @@
+{
+  "name": "parse-otp-message",
+  "version": "0.0.1",
+  "description": "Parses OTP messages for a verification code and service provider.",
+  "main": "index.js",
+  "repository": "transitive-bullshit/parse-otp-message",
+  "author": "Travis Fischer <travis@automagical.ai>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava -v && standard"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [
+    "verify",
+    "verification",
+    "confirmation",
+    "activation",
+    "authentication",
+    "auth",
+    "code",
+    "pin",
+    "otp",
+    "login",
+    "security",
+    "number",
+    "phone",
+    "phone number",
+    "sms",
+    "2fac",
+    "2factor",
+    "2-fac",
+    "2-factor",
+    "2-step"
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "standard": "^11.0.0"
+  },
+  "dependencies": {
+    "stopwords": "^0.0.9"
+  }
+}
