@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/parse-otp-message.svg)](https://www.npmjs.com/package/parse-otp-message) [![Build Status](https://travis-ci.org/transitive-bullshit/parse-otp-message.svg?branch=master)](https://travis-ci.org/transitive-bullshit/parse-otp-message) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-- handles hundreds of known services (wechat, google, facebook, whatsapp, uber, grubhub, etc...)
+- handles hundreds of known services (wechat, google, facebook, whatsapp, uber, twitter, etc...)
 - thorough test suite
 - meant for parsing automated sms messages
 
