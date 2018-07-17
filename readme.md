@@ -2,7 +2,7 @@
 
 > Parses OTP messages for a verification code and service provider.
 
-[![NPM](https://img.shields.io/npm/v/parse-otp-message.svg)](https://www.npmjs.com/package/parse-otp-message) [![Build Status](https://travis-ci.org/transitive-bullshit/parse-otp-message.svg?branch=master)](https://travis-ci.org/transitive-bullshit/parse-otp-message) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/parse-otp-message.svg)](https://www.npmjs.com/package/parse-otp-message) [![Build Status](https://travis-ci.com/transitive-bullshit/parse-otp-message.svg?branch=master)](https://travis-ci.com/transitive-bullshit/parse-otp-message) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 - handles hundreds of known services (wechat, google, facebook, whatsapp, uber, twitter, etc...)
 - thorough test suite
@@ -21,13 +21,13 @@ npm install --save parse-otp-message
 ```js
 const parse = require('parse-otp-message')
 
-const { code, service } = parse('Use 5677 as Microsoft account security code')
+const result = parse('Use 5677 as Microsoft account security code')
 
-// code = '5677
-// service = 'microsoft'
+// result.code = '5677
+// result.service = 'microsoft'
 ```
 
-See the [test suite](https://github.com/transitive-bullshit/parse-otp-message/tree/master/index.test.js) for more examples of the types of messages this module can parse.
+See the [test suite](https://github.com/transitive-bullshit/parse-otp-message/tree/master/test/index.js) for more examples of the types of messages this module can parse.
 
 
 ## API

@@ -2,7 +2,7 @@
 
 const { test } = require('ava')
 
-const parse = require('.')
+const parse = require('..')
 
 const testCases = [
   {
@@ -439,6 +439,13 @@ const testCases = [
     result: {
       code: '333222',
       service: undefined
+    }
+  },
+  {
+    message: 'Microsoft access code: 6907',
+    result: {
+      code: '6907',
+      service: 'microsoft'
     }
   }
 ]
