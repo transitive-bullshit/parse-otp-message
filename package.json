@@ -1,6 +1,6 @@
 {
   "name": "parse-otp-message",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parses OTP messages for a verification code and service provider.",
   "main": "index.js",
   "repository": "transitive-bullshit/parse-otp-message",
