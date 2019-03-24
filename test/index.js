@@ -449,7 +449,8 @@ const testCases = [
     }
   },
   {
-    message: `<#> Your ExampleApp code is: 123ABC78 FA+9qCX9VSu`,
+    message: `<#> Your ExampleApp code is: 123ABC78
+FA+9qCX9VSu`,
     result: {
       code: '123ABC78',
       service: 'exampleapp'
