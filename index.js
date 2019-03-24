@@ -19,10 +19,16 @@ module.exports = (message) => {
   code = validateAuthCode(s, /\b(\d{3}[- ]\d{3})\b/)
   if (code) return { code, service }
 
-  code = validateAuthCode(s, /\b(\d{4,8})\b/g, true)
+  code = validateAuthCode(s, /\b(\d{4,8})\b/g, { isGlobal: true })
   if (code) return { code, service }
 
-  code = validateAuthCode(s, /\b(\d{3}[- ]\d{3})\b/g, true)
+  code = validateAuthCode(s, /\b(\d{3}[- ]\d{3})\b/g, { isGlobal: true })
+  if (code) return { code, service }
+
+  code = validateAuthCode(message, /\b([\dA-Z]{6,8})\b/g, {
+    isGlobal: true,
+    cleanCode: (code) => code.replace(/[^\dA-Z]/g, '').trim()
+  })
   if (code) return { code, service }
 
   // no auth code found
@@ -31,7 +37,11 @@ module.exports = (message) => {
   }
 }
 
-function validateAuthCode (message, pattern, isGlobal) {
+function validateAuthCode (message, pattern, opts = { }) {
+  const {
+    isGlobal = false,
+    cleanCode = (code) => code.replace(/[^\d]/g, '').trim()
+  } = opts
   const match = message.match(pattern)
 
   if (match) {
@@ -41,16 +51,16 @@ function validateAuthCode (message, pattern, isGlobal) {
       do {
         const code = match[i]
         const index = message.indexOf(code)
-        const validated = validateAuthCodeMatch(message, index, code)
+        const validated = validateAuthCodeMatch(message, index, code, cleanCode)
         if (validated) return validated
       } while (++i < match.length)
     } else {
-      return validateAuthCodeMatch(message, match.index, match[1])
+      return validateAuthCodeMatch(message, match.index, match[1], cleanCode)
     }
   }
 }
 
-function validateAuthCodeMatch (message, index, code) {
+function validateAuthCodeMatch (message, index, code, cleanCode) {
   if (!code || !code.length) return
 
   // check for false-positives like phone numbers
@@ -64,7 +74,7 @@ function validateAuthCodeMatch (message, index, code) {
     if (next === '-') return
   }
 
-  return code.replace(/[^\d]/g, '').trim()
+  return cleanCode(code)
 }
 
 function inferService (message) {

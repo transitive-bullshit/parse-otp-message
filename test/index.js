@@ -447,6 +447,13 @@ const testCases = [
       code: '6907',
       service: 'microsoft'
     }
+  },
+  {
+    message: `<#> Your ExampleApp code is: 123ABC78 FA+9qCX9VSu`,
+    result: {
+      code: '123ABC78',
+      service: 'exampleapp'
+    }
   }
 ]
 
