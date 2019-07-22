@@ -449,6 +449,20 @@ const testCases = [
     }
   },
   {
+    message: 'Scotty, 8583 is your Venmo phone verification code. Enter it at venmo.com or in the Venmo app to verify your account.',
+    result: {
+      code: '8583',
+      service: 'venmo phone'
+    },
+  },
+  {
+    message: "BofA: Your code is 729489. Don't share it; we won't call to ask for it. Call 800.933.6262 if you didn't request it. 3olHr09B9Po",
+    result: {
+      code: '729489',
+      service: undefined
+    },
+  },
+  {
     message: `<#> Your ExampleApp code is: 123ABC78
 FA+9qCX9VSu`,
     result: {
