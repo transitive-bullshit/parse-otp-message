@@ -449,6 +449,13 @@ const testCases = [
     }
   },
   {
+    message: 'Scotty, 8583 is your Venmo phone verification code. Enter it at venmo.com or in the Venmo app to verify your account.',
+    result: {
+      code: '8583',
+      service: 'venmo phone'
+    }
+  },
+  {
     message: `<#> Your ExampleApp code is: 123ABC78
 FA+9qCX9VSu`,
     result: {
@@ -458,8 +465,8 @@ FA+9qCX9VSu`,
   }
 ]
 
-testCases.forEach((testCase) => {
-  test(testCase.message, (t) => {
+testCases.forEach(testCase => {
+  test(testCase.message, t => {
     const result = parse(testCase.message)
     t.deepEqual(result, testCase.result)
   })
